@@ -1,10 +1,18 @@
 from abc import ABC, abstractmethod
+from models.itemStatus import ItemStatus
 
 class LibraryItem(ABC):
-    def __init__(self, title: str, author: str, publication_year: int):
+    def __init__(self, title: str, author: str, publication_year: int, status: ItemStatus):
         self.__title = title
         self.__author = author
         self.__publication_year = publication_year
+        self.__status = status
+        
+    def get_status(self) -> ItemStatus:
+        return self.__status
+
+    def set_status(self, status: ItemStatus):
+        self.__status = status
         
     def get_title(self) -> str:
         return self.__title
