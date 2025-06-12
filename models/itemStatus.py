@@ -6,3 +6,4 @@ class ItemStatus(Enum):
     RESERVED = "reserved"
     LOST = "lost"
     DAMAGED = "damaged"
+    NOTFOUND = "not found"
