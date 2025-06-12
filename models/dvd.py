@@ -1,17 +1,17 @@
 from libraryItem import LibraryItem
 from reservable import Reservable
 
-class Book(LibraryItem, Reservable):
-    def __init__(self, title: str, author: str, publication_year: int, isbn: str):
+class DVD(LibraryItem, Reservable):
+    def __init__(self, title: str, author: str, publication_year: int, duration: int):
         super().__init__(title, author, publication_year)
-        self.__isbn = isbn
+        self.__duration = duration  # Duration in minutes
         self.__available = True  # Default availability
 
-    def get_isbn(self) -> str:
-        return self.__isbn
+    def get_duration(self) -> int:
+        return self.__duration
 
     def display_info(self) -> str:
-        return f"Title: {self.get_title()}, Author: {self.get_author()}, Year: {self.get_publication_year()}, ISBN: {self.get_isbn()}"
+        return f"Title: {self.get_title()}, Author: {self.get_author()}, Year: {self.get_publication_year()}, Duration: {self.get_duration()} minutes"
 
     def is_available(self) -> bool:
         return self.__available
@@ -22,17 +22,17 @@ class Book(LibraryItem, Reservable):
     def reserve(self, user) -> bool:
         if self.__available:
             self.__available = False
-            print(f"Book '{self.get_title()}' has been reserved by {user}.")
+            print(f"DVD '{self.get_title()}' has been reserved by {user}.")
             return True
         else:
-            print(f"Book '{self.get_title()}' is not available for reservation.")
+            print(f"DVD '{self.get_title()}' is not available for reservation.")
             return False
 
     def cancel_reservation(self) -> bool:
         if not self.__available:
             self.__available = True
-            print(f"Reservation for book '{self.get_title()}' has been canceled.")
+            print(f"Reservation for DVD '{self.get_title()}' has been canceled.")
             return True
         else:
-            print(f"Book '{self.get_title()}' is not reserved.")
+            print(f"DVD '{self.get_title()}' is not reserved.")
             return False

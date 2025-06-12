@@ -1,0 +1,51 @@
+{
+    "users": [
+        {
+            "user_id": 1,
+            "user_name": "Alice",
+            "user_email": "alice@example.com",
+            "borrowed_items": [
+                {
+                    "title": "Book A",
+                    "item_id": 101,
+                    "author": "Author X"
+                },
+                {
+                    "title": "Book B",
+                    "item_id": 102,
+                    "author": "Author Y"
+                }
+            ]
+        },
+        {
+            "user_id": 2,
+            "user_name": "Bob",
+            "user_email": "bob@example.com",
+            "borrowed_items": [
+                {
+                    "title": "Magazine X",
+                    "item_id": 201,
+                    "author": "Author Y"
+                }
+            ]
+        },
+        {
+            "user_id": 3,
+            "user_name": "Charlie",
+            "user_email": "charlie@example.com",
+            "borrowed_items": []
+        },
+        {
+            "user_id": 4,
+            "user_name": "Diana",
+            "user_email": "diana@example.com",
+            "borrowed_items": []
+        },
+        {
+            "user_id": 5,
+            "user_name": "Eve",
+            "user_email": "eve@example.com",
+            "borrowed_items": []
+        }
+    ]
+}
