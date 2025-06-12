@@ -6,13 +6,13 @@
             "user_email": "alice@example.com",
             "borrowed_items": [
                 {
-                    "title": "Book A",
                     "item_id": 101,
+                    "title": "Book A",
                     "author": "Author X"
                 },
                 {
-                    "title": "Book B",
                     "item_id": 102,
+                    "title": "Book B",
                     "author": "Author Y"
                 }
             ]
@@ -23,8 +23,8 @@
             "user_email": "bob@example.com",
             "borrowed_items": [
                 {
-                    "title": "Magazine X",
                     "item_id": 201,
+                    "title": "Magazine X",
                     "author": "Author Y"
                 }
             ]
