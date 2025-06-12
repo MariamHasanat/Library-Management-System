@@ -1,6 +1,6 @@
 from enum import Enum
 
-class BookStatus(Enum):
+class ItemStatus(Enum):
     AVAILABLE = "available"
     BORROWED = "borrowed"
     RESERVED = "reserved"
