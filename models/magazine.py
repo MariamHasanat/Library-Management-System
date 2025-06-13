@@ -12,11 +12,11 @@ class Magazine(LibraryItem):
     def display_info(self) -> str:
         return f"Title: {self.get_title()}, Author: {self.get_author()}, Year: {self.get_publication_year()}, Issue Number: {self.get_issue_number()}"
 
-    def is_available(self) -> bool:
-        return self.__available
+    def check_availability(self) -> str:
+        return self.get_status()
 
-    def set_availability(self, available: bool):
-        self.__available = available
+    # def set_availability(self, available: bool):
+    #     self.__available = available
         
     def to_dict(self) -> dict:
         return {
@@ -24,5 +24,5 @@ class Magazine(LibraryItem):
             "author": self.get_author(),
             "publication_year": self.get_publication_year(),
             "issue_number": self.get_issue_number(),
-            "available": self.is_available()
+            "availability": self.check_availability()
         }

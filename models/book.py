@@ -13,11 +13,11 @@ class Book(LibraryItem, Reservable):
     def display_info(self) -> str:
         return f"Title: {self.get_title()}, Author: {self.get_author()}, Year: {self.get_publication_year()}, ISBN: {self.get_isbn()}"
 
-    def is_available(self) -> bool:
-        return self.__available
+    def check_availability(self) -> str:
+        return self.get_status()
 
-    def set_availability(self, available: bool):
-        self.__available = available
+    # def set_availability(self, available: bool):
+    #     self.__available = available
         
     def reserve(self, user) -> bool:
         if self.__available:
@@ -44,6 +44,6 @@ class Book(LibraryItem, Reservable):
             "author": self.get_author(),
             "publication_year": self.get_publication_year(),
             "isbn": self.get_isbn(),
-            "available": self.is_available()
+            "availability": self.check_availability()
         }
         #Bridge Pattern: used to decouple an abstraction from its implementation
