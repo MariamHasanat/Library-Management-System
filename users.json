@@ -1,0 +1,48 @@
+[
+    {
+        "user_id": 1,
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "borrowed_items": [
+            {
+                "title": "Inception",
+                "author": "Christopher Nolan",
+                "publication_year": 2010,
+                "status": "borrowed",
+                "duration": 148,
+                "availability": "borrowed"
+            },
+            {
+                "title": "Inception",
+                "author": "Christopher Nolan",
+                "publication_year": 2010,
+                "status": "borrowed",
+                "duration": 148,
+                "availability": "borrowed"
+            }
+        ]
+    },
+    {
+        "user_id": 1,
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "borrowed_items": [
+            {
+                "title": "Inception",
+                "author": "Christopher Nolan",
+                "publication_year": 2010,
+                "status": "borrowed",
+                "duration": 148,
+                "availability": "borrowed"
+            },
+            {
+                "title": "Inception",
+                "author": "Christopher Nolan",
+                "publication_year": 2010,
+                "status": "borrowed",
+                "duration": 148,
+                "availability": "borrowed"
+            }
+        ]
+    }
+]
