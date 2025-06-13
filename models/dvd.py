@@ -1,6 +1,7 @@
 from models.libraryItem import LibraryItem
 from models.itemStatus import ItemStatus
 from models.reservable import Reservable
+from models.user import User
 
 class DVD(LibraryItem, Reservable):
     def __init__(self, title: str, author: str, publication_year: int, status: ItemStatus, duration: int):
@@ -13,10 +14,10 @@ class DVD(LibraryItem, Reservable):
     def check_availability(self) -> str:
         return self.get_status()
     
-    def reserve(self, user) -> bool: #need more implementation details for user - remember this is a library system
+    def reserve(self, user: User) -> bool: #need more implementation details for user - remember this is a library system
         if self.get_status() == ItemStatus.AVAILABLE:
             self.set_status(ItemStatus.RESERVED)
-            print(f"DVD '{self.get_title()}' has been reserved by {user}.")
+            print(f"DVD '{self.get_title()}' has been reserved by {user.get_name()}.")
             return True
         else:
             print(f"DVD '{self.get_title()}' is not available for reservation.")
