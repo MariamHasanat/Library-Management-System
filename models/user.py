@@ -1,4 +1,4 @@
-from libraryItem import LibraryItem
+from models.libraryItem import LibraryItem
 
 class User:
     def __init__(self, user_id: int, name: str, email: str, borrowed_items: list[LibraryItem] = []):
@@ -19,8 +19,9 @@ class User:
     def get_borrowed_items(self) -> list:
         return self.__borrowed_items
 
-    def add_borrowed_item(self, item):
-        self.__borrowed_items.append(item)
+    def add_borrowed_item(self, item: LibraryItem):
+        if item not in self.__borrowed_items:
+            self.__borrowed_items.append(item)
 
-    def remove_borrowed_item(self, item):
+    def remove_borrowed_item(self, item: LibraryItem):
         self.__borrowed_items.remove(item)
