@@ -29,7 +29,7 @@ class DVD(LibraryItem, Reservable):
             "title": self.get_title(),
             "author": self.get_author(),
             "publication_year": self.get_publication_year(),
-            "status": self.get_status().name,
+            "status": self.get_status(),
             "duration": self.get_duration(),
             "availability": self.check_availability()
         }
