@@ -30,3 +30,7 @@ class LibraryItem(ABC):
     @abstractmethod
     def check_availability(self) -> str:
         pass
+    
+    @abstractmethod
+    def to_dict(self) -> dict:
+        pass

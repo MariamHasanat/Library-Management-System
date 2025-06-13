@@ -38,4 +38,12 @@ class Book(LibraryItem, Reservable):
             return False
         
         
+    def to_dict(self):
+        return {
+            "title": self.get_title(),
+            "author": self.get_author(),
+            "publication_year": self.get_publication_year(),
+            "isbn": self.get_isbn(),
+            "available": self.is_available()
+        }
         #Bridge Pattern: used to decouple an abstraction from its implementation

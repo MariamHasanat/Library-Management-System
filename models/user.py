@@ -25,3 +25,11 @@ class User:
 
     def remove_borrowed_item(self, item: LibraryItem):
         self.__borrowed_items.remove(item)
+
+    def to_dict(self) -> dict:
+        return {
+            "user_id": self.__user_id,
+            "name": self.__name,
+            "email": self.__email,
+            "borrowed_items": [item.to_dict() for item in self.__borrowed_items]
+        }

@@ -17,3 +17,12 @@ class Magazine(LibraryItem):
 
     def set_availability(self, available: bool):
         self.__available = available
+        
+    def to_dict(self) -> dict:
+        return {
+            "title": self.get_title(),
+            "author": self.get_author(),
+            "publication_year": self.get_publication_year(),
+            "issue_number": self.get_issue_number(),
+            "available": self.is_available()
+        }

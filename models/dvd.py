@@ -17,13 +17,21 @@ class DVD(LibraryItem, Reservable):
     def reserve(self, user: User) -> bool: #need more implementation details for user - remember this is a library system
         if self.get_status() == ItemStatus.AVAILABLE:
             self.set_status(ItemStatus.RESERVED)
+            user.add_borrowed_item(self)
             print(f"DVD '{self.get_title()}' has been reserved by {user.get_name()}.")
             return True
         else:
             print(f"DVD '{self.get_title()}' is not available for reservation.")
             return False
 
-
+    def to_dict(self) -> dict:
+        return {
+            "title": self.get_title(),
+            "author": self.get_author(),
+            "publication_year": self.get_publication_year(),
+            "status": self.get_status().name,
+            "duration": self.get_duration()
+        }
 # ----------------------------------------------------------
     def get_duration(self) -> int:
         return self.__duration
