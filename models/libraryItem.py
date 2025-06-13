@@ -28,5 +28,5 @@ class LibraryItem(ABC):
         pass
     
     @abstractmethod
-    def is_available(self) -> bool:
+    def check_availability(self) -> str:
         pass
